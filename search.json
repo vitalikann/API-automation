@@ -1,0 +1,178 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "definitions": {},
+  "properties": {
+    "albums": {
+      "properties": {
+        "found": {
+          "items": {
+            "properties": {
+              "ID": {
+                "type": "integer"
+              },
+              "created": {
+                "type": "string"
+              },
+              "mnID": {
+                "type": "string"
+              },
+              "releaseDate": {
+                "type": "string"
+              },
+              "score": {
+                "type": "number"
+              },
+              "status": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              },
+              "trackCount": {
+                "type": "string"
+              },
+              "updated": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "ID",
+              "mnID",
+              "score",
+              "releaseDate",
+              "created",
+              "title",
+              "updated",
+              "trackCount",
+              "status"
+            ],
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "offset": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "offset",
+        "found"
+      ],
+      "type": "object"
+    },
+    "artists": {
+      "properties": {
+        "found": {
+          "items": {
+            "properties": {
+              "ID": {
+                "type": "integer"
+              },
+              "created": {
+                "type": "string"
+              },
+              "mnID": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "score": {
+                "type": "number"
+              },
+              "updated": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "ID",
+              "mnID",
+              "score",
+              "created",
+              "name",
+              "updated"
+            ],
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "offset": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "offset",
+        "found"
+      ],
+      "type": "object"
+    },
+    "tracks": {
+      "properties": {
+        "found": {
+          "items": {
+            "properties": {
+              "ID": {
+                "type": "integer"
+              },
+              "album": {
+                "type": "string"
+              },
+              "created": {
+                "type": "string"
+              },
+              "duration": {
+                "type": "string"
+              },
+              "mnID": {
+                "type": "string"
+              },
+              "number": {
+                "type": "string"
+              },
+              "score": {
+                "type": "number"
+              },
+              "status": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              },
+              "updated": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "ID",
+              "duration",
+              "mnID",
+              "score",
+              "number",
+              "created",
+              "title",
+              "updated",
+              "status",
+              "album"
+            ],
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "offset": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "offset",
+        "found"
+      ],
+      "type": "object"
+    }
+  },
+  "required": [
+    "artists",
+    "tracks",
+    "albums"
+  ],
+  "type": "object"
+}

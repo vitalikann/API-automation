@@ -1,0 +1,76 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "definitions": {},
+  "properties": {
+    "data": {
+      "items": {
+        "properties": {
+          "ID": {
+            "type": "integer"
+          },
+          "album": {
+            "type": "string"
+          },
+          "className": {
+            "type": "string"
+          },
+          "created": {
+            "type": "string"
+          },
+          "duration": {
+            "type": "string"
+          },
+          "extension": {
+            "type": "string"
+          },
+          "fileSize": {
+            "type": "string"
+          },
+          "mnID": {
+            "type": "string"
+          },
+          "number": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "updated": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "ID",
+          "duration",
+          "mnID",
+          "fileSize",
+          "className",
+          "number",
+          "created",
+          "title",
+          "extension",
+          "updated",
+          "status",
+          "album"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "limit": {
+      "type": "integer"
+    },
+    "offset": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "offset",
+    "data",
+    "limit"
+  ],
+  "type": "object"
+}

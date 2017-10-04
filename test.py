@@ -40,17 +40,33 @@ def test_discoverRecent():
 
 def test_search():
     # data for request
-    url = server + "/API/0.9/users/me?discover"
+    url = server + "/API/0.9/users/me"
 
     # getting response
-    response = requests.get(url, headers=token, params={"search": "Каста"})
-    print(response.content)
+    response = requests.get(url, headers=token, params={"search": "Madonna"})
 
     validate_json_chema("search.json", response)
 
-test_discover()
-test_discoverRecent()
-test_search()
+def test_me():
+    # data for request
+    url = server + "/API/0.9/users/me"
+
+    # getting response
+    response = requests.get(url, headers=token)
+
+    validate_json_chema("me.json", response)
+
+def test_getAccount():
+    # data for request
+    url = server + "/API/0.9/users/me?getAccount"
+
+    # getting response
+    response = requests.get(url, headers=token)
+    print(response.content)
+
+    validate_json_chema("getAccount.json", response)
+
+test_getAccount()
 
 # change json schemes for all methods with required params
 # http://json-schema.org/example1.html

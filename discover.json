@@ -1,76 +1,148 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
-  "definitions": {},
+  "$schema": "https://conuremusic.com/API/0.9/users/me?Dicover",
   "properties": {
-    "data": {
-      "items": {
-        "properties": {
-          "ID": {
-            "type": "integer"
+    "albums": {
+      "properties": {
+        "found": {
+          "items": {
+            "properties": {
+              "ID": {
+                "type": "integer"
+              },
+              "created": {
+                "type": "string"
+              },
+              "mnID": {
+                "type": "string"
+              },
+              "releaseDate": {
+                "type": "string"
+              },
+              "score": {
+                "type": "number"
+              },
+              "status": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              },
+              "trackCount": {
+                "type": "string"
+              },
+              "updated": {
+                "type": "string"
+              }
+            },
+            "type": "object"
           },
-          "album": {
-            "type": "string"
-          },
-          "className": {
-            "type": "string"
-          },
-          "created": {
-            "type": "string"
-          },
-          "duration": {
-            "type": "string"
-          },
-          "extension": {
-            "type": "string"
-          },
-          "fileSize": {
-            "type": "string"
-          },
-          "mnID": {
-            "type": "string"
-          },
-          "number": {
-            "type": "string"
-          },
-          "status": {
-            "type": "string"
-          },
-          "title": {
-            "type": "string"
-          },
-          "updated": {
-            "type": "string"
-          }
+          "type": "array"
         },
-        "required": [
-          "ID",
-          "duration",
-          "mnID",
-          "fileSize",
-          "className",
-          "number",
-          "created",
-          "title",
-          "extension",
-          "updated",
-          "status",
-          "album"
-        ],
-        "type": "object"
+        "offset": {
+          "type": "integer"
+        }
       },
-      "type": "array"
+      "type": "object"
     },
-    "limit": {
-      "type": "integer"
+    "artists": {
+      "properties": {
+        "found": {
+          "items": {
+            "properties": {
+              "ID": {
+                "type": "integer"
+              },
+              "created": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "fullimage": {
+                "type": "string"
+              },
+              "halfimage": {
+                "type": "string"
+              },
+              "image": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "score": {
+                "type": "number"
+              },
+              "thumbnail": {
+                "type": "string"
+              },
+              "updated": {
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "offset": {
+          "type": "integer"
+        }
+      },
+      "type": "object"
     },
-    "offset": {
-      "type": "integer"
+    "tracks": {
+      "properties": {
+        "found": {
+          "items": {
+            "properties": {
+              "ID": {
+                "type": "integer"
+              },
+              "album": {
+                "type": "string"
+              },
+              "created": {
+                "type": "string"
+              },
+              "duration": {
+                "type": "string"
+              },
+              "extension": {
+                "type": "string"
+              },
+              "fileSize": {
+                "type": "string"
+              },
+              "mnID": {
+                "type": "string"
+              },
+              "number": {
+                "type": "string"
+              },
+              "score": {
+                "type": "number"
+              },
+              "status": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              },
+              "updated": {
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "offset": {
+          "type": "integer"
+        }
+      },
+      "type": "object"
     }
   },
-  "required": [
-    "offset",
-    "data",
-    "limit"
-  ],
   "type": "object"
 }
+

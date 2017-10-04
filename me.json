@@ -1,0 +1,56 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "definitions": {},
+  "properties": {
+    "ID": {
+      "type": "integer"
+    },
+    "auth": {
+      "type": "integer"
+    },
+    "balance": {
+      "type": "string"
+    },
+    "email": {
+      "type": ["string", "null"]
+    },
+    "explicit": {
+      "type": "string"
+    },
+    "name": {
+      "type": ["string", "null"]
+    },
+    "profile": {
+      "type": "string"
+    },
+    "priceVisiblity": {
+      "type": ["string"]
+    },
+    "settings": {
+      "properties": {
+        "explicit": {
+          "type": "string"
+        },
+        "profile": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "profile",
+        "explicit"
+      ],
+      "type": "object"
+    }
+  },
+  "required": [
+    "profile",
+    "settings",
+    "explicit",
+    "auth",
+    "email",
+    "balance",
+    "ID"
+  ],
+  "type": "object"
+}
+

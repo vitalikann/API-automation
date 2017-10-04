@@ -1,6 +1,5 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
-  "definitions": {},
+  "$schema": "https://conuremusic.com/API/0.9/users/me",
   "properties": {
     "albums": {
       "properties": {
@@ -35,17 +34,6 @@
                 "type": "string"
               }
             },
-            "required": [
-              "ID",
-              "mnID",
-              "score",
-              "releaseDate",
-              "created",
-              "title",
-              "updated",
-              "trackCount",
-              "status"
-            ],
             "type": "object"
           },
           "type": "array"
@@ -54,10 +42,6 @@
           "type": "integer"
         }
       },
-      "required": [
-        "offset",
-        "found"
-      ],
       "type": "object"
     },
     "artists": {
@@ -71,7 +55,16 @@
               "created": {
                 "type": "string"
               },
-              "mnID": {
+              "description": {
+                "type": "string"
+              },
+              "fullimage": {
+                "type": "string"
+              },
+              "halfimage": {
+                "type": "string"
+              },
+              "image": {
                 "type": "string"
               },
               "name": {
@@ -80,18 +73,13 @@
               "score": {
                 "type": "number"
               },
+              "thumbnail": {
+                "type": "string"
+              },
               "updated": {
                 "type": "string"
               }
             },
-            "required": [
-              "ID",
-              "mnID",
-              "score",
-              "created",
-              "name",
-              "updated"
-            ],
             "type": "object"
           },
           "type": "array"
@@ -100,10 +88,6 @@
           "type": "integer"
         }
       },
-      "required": [
-        "offset",
-        "found"
-      ],
       "type": "object"
     },
     "tracks": {
@@ -121,6 +105,12 @@
                 "type": "string"
               },
               "duration": {
+                "type": "string"
+              },
+              "extension": {
+                "type": "string"
+              },
+              "fileSize": {
                 "type": "string"
               },
               "mnID": {
@@ -142,18 +132,6 @@
                 "type": "string"
               }
             },
-            "required": [
-              "ID",
-              "duration",
-              "mnID",
-              "score",
-              "number",
-              "created",
-              "title",
-              "updated",
-              "status",
-              "album"
-            ],
             "type": "object"
           },
           "type": "array"
@@ -162,17 +140,9 @@
           "type": "integer"
         }
       },
-      "required": [
-        "offset",
-        "found"
-      ],
       "type": "object"
     }
   },
-  "required": [
-    "artists",
-    "tracks",
-    "albums"
-  ],
   "type": "object"
 }
+

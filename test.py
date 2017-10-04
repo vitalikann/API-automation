@@ -1,4 +1,3 @@
-import pytest
 import requests
 import json
 
@@ -27,7 +26,10 @@ def test_discover():
     response = requests.get(url, headers=token)
     # print(response.content)
 
-    validate_json_chema("discover.json", response)
+    if (response.status_code == 200):
+        validate_json_chema("discover.json", response)
+    else:
+        print(response.content)
 
 def test_discoverRecent():
     # data for request
@@ -36,7 +38,10 @@ def test_discoverRecent():
     # getting response
     response = requests.get(url, headers=token)
 
-    validate_json_chema("discoverRecent.json", response)
+    if (response.status_code == 200):
+        validate_json_chema("discoverRecent.json", response)
+    else:
+        print(response.content)
 
 def test_search():
     # data for request
@@ -45,7 +50,10 @@ def test_search():
     # getting response
     response = requests.get(url, headers=token, params={"search": "Madonna"})
 
-    validate_json_chema("search.json", response)
+    if (response.status_code == 200):
+        validate_json_chema("search.json", response)
+    else:
+        print(response.content)
 
 def test_me():
     # data for request
@@ -54,7 +62,10 @@ def test_me():
     # getting response
     response = requests.get(url, headers=token)
 
-    validate_json_chema("me.json", response)
+    if (response.status_code == 200):
+        validate_json_chema("me.json", response)
+    else:
+        print(response.content)
 
 def test_getAccount():
     # data for request
@@ -62,11 +73,20 @@ def test_getAccount():
 
     # getting response
     response = requests.get(url, headers=token)
-    print(response.content)
 
-    validate_json_chema("getAccount.json", response)
+    if (response.status_code == 200):
+        validate_json_chema("getAccount.json", response)
+    else:
+        print(response.content)
 
-test_getAccount()
+def test_logout():
+    # data for request
+    url = server + "/API/0.9/users/me?logout"
+
+    # getting response
+    response = requests.get(url, headers=token)
+
+    assert response.status_code == 200, "Logged out"
 
 # change json schemes for all methods with required params
 # http://json-schema.org/example1.html

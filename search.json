@@ -1,5 +1,6 @@
 {
-  "$schema": "https://conuremusic.com/API/0.9/users/me",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "definitions": {},
   "properties": {
     "albums": {
       "properties": {
@@ -34,6 +35,17 @@
                 "type": "string"
               }
             },
+            "required": [
+              "status",
+              "trackCount",
+              "updated",
+              "title",
+              "created",
+              "releaseDate",
+              "score",
+              "mnID",
+              "ID"
+            ],
             "type": "object"
           },
           "type": "array"
@@ -42,6 +54,10 @@
           "type": "integer"
         }
       },
+      "required": [
+        "found",
+        "offset"
+      ],
       "type": "object"
     },
     "artists": {
@@ -80,6 +96,18 @@
                 "type": "string"
               }
             },
+            "required": [
+              "updated",
+              "halfimage",
+              "description",
+              "created",
+              "image",
+              "fullimage",
+              "ID",
+              "score",
+              "thumbnail",
+              "name"
+            ],
             "type": "object"
           },
           "type": "array"
@@ -88,6 +116,10 @@
           "type": "integer"
         }
       },
+      "required": [
+        "found",
+        "offset"
+      ],
       "type": "object"
     },
     "tracks": {
@@ -132,6 +164,20 @@
                 "type": "string"
               }
             },
+            "required": [
+              "album",
+              "status",
+              "updated",
+              "extension",
+              "title",
+              "created",
+              "number",
+              "score",
+              "fileSize",
+              "mnID",
+              "duration",
+              "ID"
+            ],
             "type": "object"
           },
           "type": "array"
@@ -140,9 +186,18 @@
           "type": "integer"
         }
       },
+      "required": [
+        "found",
+        "offset"
+      ],
       "type": "object"
     }
   },
+  "required": [
+    "albums",
+    "tracks",
+    "artists"
+  ],
   "type": "object"
 }
 

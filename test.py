@@ -88,6 +88,8 @@ def test_logout():
 
     assert response.status_code == 200, "Logged out"
 
+test_search()
+
 # change json schemes for all methods with required params
 # http://json-schema.org/example1.html
 # Can price be 0
